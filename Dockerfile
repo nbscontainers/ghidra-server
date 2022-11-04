@@ -1,7 +1,7 @@
 FROM docker.io/alpine:3.15.5 AS downloader
 
-ARG GHIDRA_URL=https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_10.1.5_build/ghidra_10.1.5_PUBLIC_20220726.zip
-ARG GHIDRA_SHA256=17db4ba7d411d11b00d1638f163ab5d61ef38712cd68e462eb8c855ec5cfb5ed
+ARG GHIDRA_URL=https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_10.2_build/ghidra_10.2_PUBLIC_20221101.zip
+ARG GHIDRA_SHA256=a5163f50bd6ce725c4c8638f7505b64bb603ea6bfe3f7d9ed4e403236716f787
 
 RUN apk add --no-cache wget unzip && \
     wget -q -O /ghidra.zip ${GHIDRA_URL} && \
@@ -10,7 +10,7 @@ RUN apk add --no-cache wget unzip && \
     mv /ghidra_* /ghidra
 
 
-FROM docker.io/openjdk:11-slim
+FROM docker.io/openjdk:17-slim
 
 COPY --from=downloader /ghidra /ghidra
 
