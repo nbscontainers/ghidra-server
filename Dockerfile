@@ -10,7 +10,7 @@ RUN apk add --no-cache wget unzip && \
     mv /ghidra_* /ghidra
 
 
-FROM docker.io/openjdk:17-slim
+FROM docker.io/eclipse-temurin:17-jre-alpine
 
 COPY --from=downloader /ghidra /ghidra
 
