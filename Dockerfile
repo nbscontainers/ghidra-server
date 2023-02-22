@@ -1,4 +1,4 @@
-FROM docker.io/alpine:3.15.5 AS downloader
+FROM docker.io/alpine:3.17.2 AS downloader
 
 ARG GHIDRA_URL=https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_10.2.3_build/ghidra_10.2.3_PUBLIC_20230208.zip
 ARG GHIDRA_SHA256=daf4d85ec1a8ca55bf766e97ec43a14b519cbd1060168e4ec45d429d23c31c38
